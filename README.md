@@ -1,5 +1,5 @@
 <H1>Index of /stevewm/</H1>
-<pre>   Name                    Last modified       Size  Description
+<pre>   Name                     Last modified       Size  Description
 <hr>
 <picture><img src="icons/back.gif" alt="[DIR]" width="20" height="22"></picture> <a href="https://github.com/">Parent Directory</A>        08-Feb-2008 18:28      -  
 <picture><img src="icons/folder.gif" alt="[DIR]" width="20" height="22"></picture> <a href="https://github.com/stevewm/homelab">homelab/</A>                04-Feb-2024 09:01   13mb  Home Kubernetes cluster
