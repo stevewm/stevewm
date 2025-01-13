@@ -45,11 +45,15 @@ jobs:
           GITHUB_USER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.READ_REPO_TOKEN }}
         run: uv run repos.py
-      
-      - name: Update README.md
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: "README.md"
-          message: "chore: update README.md"
-          committer_name: "botty-hill[bot]"
-          committer_email: botty-hill[bot]@users.noreply.github.com
+
+      - run: cat ./README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "botty-hill[bot]"
+          git config --global user.email "botty-hill[bot]@users.noreply.github.com"
+          git add README.md
+          git diff-index --quiet HEAD || git commit -m "chore: update README.md"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
