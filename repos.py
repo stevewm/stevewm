@@ -1,11 +1,3 @@
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "jinja2",
-#     "pyyaml",
-#     "requests",
-# ]
-# ///
 import os
 import requests
 import yaml
@@ -53,7 +45,7 @@ def fetch_repo_details(repo_name):
         repo = response.json()
         return {
             "name": repo["name"],
-            "icon": "folder", # FIXME: support arbitrary icons
+            "icon": "folder",  # FIXME: support arbitrary icons
             "url": repo["html_url"],
             "desc": truncate_description(repo["description"] or ""),
             "size": f"{repo['size'] / 1024:.2f} MB"
