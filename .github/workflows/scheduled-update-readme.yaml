@@ -12,8 +12,10 @@ on:
     branches:
       - main
     paths: 
+      - config.yaml
       - README.md.j2
       - repos.py
+      - .github/workflows/scheduled-update-readme.yaml
 
 permissions:
   contents: write
