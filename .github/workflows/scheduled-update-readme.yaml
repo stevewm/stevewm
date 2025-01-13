@@ -15,6 +15,9 @@ on:
       - README.md.j2
       - repos.py
 
+permissions:
+  contents: write
+
 jobs:
   readme:
     runs-on: ubuntu-latest
@@ -24,18 +27,11 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v5
 
-    - name: Generate Token
-      uses: actions/create-github-app-token@v1
-      id: app-token
-      with:
-        app-id: "${{ secrets.BOT_APP_ID }}"
-        private-key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
-
     - name: Run Script
       shell: bash
       env:
         GITHUB_USER: ${{ github.repository_owner }}
-        GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_READ_TOKEN }}
       run: uv run repos.py
     
     - name: Update README.md
