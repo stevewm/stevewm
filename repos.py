@@ -18,6 +18,7 @@ def fetch_last_commit_date(repo_name):
         "Accept": "application/vnd.github+json",
     }
     response = requests.get(url, headers=headers)
+    response.raise_for_status()
     if response.status_code == 200:
         commits = response.json()
         if commits:
