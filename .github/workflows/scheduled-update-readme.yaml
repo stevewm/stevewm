@@ -57,6 +57,7 @@ jobs:
         with:
           add: "README.md"
           message: "chore: update README.md"
+          default_author: ${{ env.AUTHOR }}
           committer_name: ${{ env.AUTHOR }}
           committer_email: ${{ env.AUTHOR_EMAIL }}
           author_name: ${{ env.AUTHOR }}
