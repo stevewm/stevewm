@@ -5,6 +5,6 @@
 
 <picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/homelab">homelab/</A>                  13-Jan-2025 17:16    4.65 MB  homelab as code: approved by your wife's boyfriend
 <picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/dotfiles">dotfiles/</A>                 04-Jul-2024 05:23    53 KB    for fish + managed with chezmoi
-<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/renovate-config">renovate-config/</A>          05-Jan-2025 19:51    5 KB     Renovate configuration
+<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/renovate-config">renovate-config/</A>          05-Jan-2025 19:51    5 KB     Reusable configuration for Renovate
 </pre>
 <hr>
