@@ -68,6 +68,8 @@ repos = [
     if fetch_repo_details(repo_name)
 ]
 
+print(repos)
+
 env = Environment(loader=FileSystemLoader("."))
 template = env.get_template("README.md.j2")
 output = template.render(github_user=GITHUB_USER, repos=repos)

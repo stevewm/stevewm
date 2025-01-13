@@ -22,6 +22,10 @@ permissions:
 
 jobs:
   readme:
+    env:
+      AUTHOR: "botty-hill[bot]"
+      AUTHOR_EMAIL: "botty-hill[bot]@users.noreply.github.com"
+
     runs-on: ubuntu-latest
     steps:
       - name: Generate Token
@@ -45,11 +49,15 @@ jobs:
           GITHUB_USER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.READ_REPO_TOKEN }}
         run: uv run repos.py
+
+      - run: echo ./README.md
       
       - name: Update README.md
         uses: EndBug/add-and-commit@v9
         with:
           add: "README.md"
           message: "chore: update README.md"
-          committer_name: "botty-hill[bot]"
-          committer_email: botty-hill[bot]@users.noreply.github.com
+          committer_name: ${{ env.AUTHOR }}
+          committer_email: ${{ env.AUTHOR_EMAIL }}
+          author_name: ${{ env.AUTHOR }}
+          author_email: ${{ env.AUTHOR_EMAIL }}
