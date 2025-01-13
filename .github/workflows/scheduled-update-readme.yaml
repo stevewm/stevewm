@@ -22,22 +22,32 @@ jobs:
   readme:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Generate Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: "${{ secrets.BOT_APP_ID }}"
+          private-key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: "${{ steps.app-token.outputs.token }}"
 
-    - name: Run Script
-      shell: bash
-      env:
-        GITHUB_USER: ${{ github.repository_owner }}
-        GITHUB_TOKEN: ${{ secrets.READ_REPO_TOKEN }}
-      run: uv run repos.py
-    
-    - name: Update README.md
-      uses: EndBug/add-and-commit@v9
-      with:
-        add: "README.md"
-        message: "chore: update README.md"
-        committer_name: "botty-hill[bot]"
-        committer_email: botty-hill[bot]@users.noreply.github.com
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Run Script
+        shell: bash
+        env:
+          GITHUB_USER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.READ_REPO_TOKEN }}
+        run: uv run repos.py
+      
+      - name: Update README.md
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "README.md"
+          message: "chore: update README.md"
+          committer_name: "botty-hill[bot]"
+          committer_email: botty-hill[bot]@users.noreply.github.com
