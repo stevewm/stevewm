@@ -1,8 +1,9 @@
-<H1>Index of /{{ github_user         }}/</H1>
-<pre>{{" " * 3}}Name{{ " " * 21 }}Last modified{{ " " * 9 }}Size{{ " " * 5 }}Description
+<H1>Index of /{{ github_user }}/</H1>
+<pre>
+   Name                      Last modified        Size     Description
 <hr>
-<picture><img src="icons/back.gif" alt="[DIR]" width="20" height="22"></picture> <a href="https://github.com/">Parent Directory</A> {{ " " * 9 }}08-Feb-2008 18:28{{ " " * 4 }}-  
-{% for repo in repos %}
-<picture><img src="icons/{{ repo.icon }}.gif" alt="[{{ repo.icon | upper }}]" width="20" height="22"></picture> <a href="{{ repo.url }}">{{ repo.name }}/</A> {{ " " * (23 - repo.name | length) }} {{ repo.modified }} {{ " " * (19 - repo.modified | length) }} {{ repo.size }} {{ " " * (7 - repo.size | length) }} {{ repo.desc }}{% endfor %}
+<picture><img src="icons/back.gif" alt="[DIR]" width="20" height="22"></picture> <a href="https://github.com/">Parent Directory</a>          08-Feb-2008 18:28    -  
+{% for repo in repos %}<picture><img src="icons/{{ repo.icon }}.gif" alt="[{{ repo.icon | upper }}]" width="20" height="22"></picture> <a href="{{ repo.url }}">{{ repo.name }}/</a> {{ " " * (23 - repo.name | length) }} {{ repo.modified }} {{ " " * (19 - repo.modified | length) }} {{ repo.size }} {{ " " * (7 - repo.size | length) }} {{ repo.desc }}
+{% endfor %}
 </pre>
 <hr>
