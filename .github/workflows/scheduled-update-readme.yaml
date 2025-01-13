@@ -50,7 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.READ_REPO_TOKEN }}
         run: uv run repos.py
 
-      - run: echo ./README.md
+      - run: cat ./README.md
       
       - name: Update README.md
         uses: EndBug/add-and-commit@v9
