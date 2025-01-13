@@ -1,0 +1,5 @@
+---
+repos:
+  - homelab
+  - dotfiles
+  - renovate-config
