@@ -48,9 +48,9 @@ def fetch_repo_details(repo_name):
             "icon": "folder",  # FIXME: support arbitrary icons
             "url": repo["html_url"],
             "desc": truncate_description(repo["description"] or ""),
-            "size": f"{repo['size'] / 1024:.2f} MB"
+            "size": f"{repo['size'] / 1024:.2f}M"
             if repo["size"] >= 1024
-            else f"{repo['size']} KB",
+            else f"{repo['size']}K",
             "modified": fetch_last_commit_date(repo["name"]),
         }
     return None
