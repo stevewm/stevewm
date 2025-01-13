@@ -3,11 +3,11 @@
 # for repos listed in `config.yaml`
 #
 
-name: "Update README.md"
+name: "Scheduled: Update README.md"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # Midnight: https://crontab.guru/#0_0_*_*_*
   push:
     branches:
       - main
