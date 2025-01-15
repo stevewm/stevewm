@@ -8,6 +8,7 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_USER = os.getenv("GITHUB_USER")
 
 if not GITHUB_TOKEN or not GITHUB_USER:
+    print("GITHUB_TOKEN or GITHUB_USER not set")
     exit(1)
 
 
@@ -29,7 +30,7 @@ def fetch_last_commit_date(repo_name):
     return "N/A"
 
 
-def truncate_description(description, length=52):
+def truncate(description, length):
     if len(description) > length:
         return description[:length] + "..."
     return description
@@ -45,10 +46,10 @@ def fetch_repo_details(repo_name):
     if response.status_code == 200:
         repo = response.json()
         return {
-            "name": repo["name"],
+            "name": truncate(repo["name"], 20),
             "icon": "folder",  # FIXME: support arbitrary icons
             "url": repo["html_url"],
-            "desc": truncate_description(repo["description"] or ""),
+            "desc": truncate(repo["description"] or "", 52),
             "size": f"{repo['size'] / 1024:.2f}M"
             if repo["size"] >= 1024
             else f"{repo['size']}K",
@@ -67,6 +68,8 @@ repos = [
     for repo_name in repo_names
     if fetch_repo_details(repo_name)
 ]
+
+assert len(repos) is len(repo_names)
 
 env = Environment(loader=FileSystemLoader("."))
 template = env.get_template("README.md.j2")
