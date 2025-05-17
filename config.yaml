@@ -3,3 +3,4 @@ repos:
   - homelab
   - dotfiles
   - renovate-config
+  - vsmod
