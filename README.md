@@ -3,9 +3,9 @@
    Name                      Last modified        Size     Description
 <hr>
 <picture><img src="icons/back.gif" alt="[DIR]" width="20" height="22"></picture> <a href="https://github.com/">Parent Directory</a>          08-Feb-2008 18:28    -  
-<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/homelab">homelab/</a>                  04-Sep-2026 16:05    7.91M    homelab as code: approved by your wife's boyfriend
+<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/homelab">homelab/</a>                  05-Sep-2026 23:04    7.92M    homelab as code: approved by your wife's boyfriend
 <picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/dotfiles">dotfiles/</a>                 19-May-2026 16:56    16K      for fish + managed with chezmoi
-<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/renovate-config">renovate-config/</a>          31-Aug-2026 06:05    158K     Reusable configuration for Renovate
+<picture><img src="icons/folder.gif" alt="[FOLDER]" width="20" height="22"></picture> <a href="https://github.com/stevewm/renovate-config">renovate-config/</a>          31-Aug-2026 06:05    159K     Reusable configuration for Renovate
 
 </pre>
 <hr>
